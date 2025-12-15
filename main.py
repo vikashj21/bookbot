@@ -1,4 +1,4 @@
-from stats import count_words
+from stats import count_words, num_occurences
 
 def get_book_text(filepath):
     print(filepath)
@@ -8,8 +8,12 @@ def get_book_text(filepath):
 
 def main():
     # get_book_text('books/frankenstein.txt')
-    num_words = count_words(get_book_text('books/frankenstein.txt'))
+    text = get_book_text('books/frankenstein.txt')
+    num_words = count_words(text)
     print(f"Found {num_words} total words")
+
+    occurences = num_occurences(text)
+    print(occurences)
 
 if __name__ == "__main__":
     main()    
